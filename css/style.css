@@ -220,6 +220,7 @@ div#lording {
     font-weight: bold;
 }
 
+
 section div.aboutventas_box {
     width: 1200px;
     height: 480px;
@@ -232,7 +233,8 @@ section div.aboutventas_img img {
     height: 308px;
     padding-top: 75px;
     float: left;
-    padding-right: 60px;
+    padding-right: 70px;
+
 }
 
 section div.aboutventas_img2 {
@@ -657,6 +659,14 @@ ul#contact_box {
         font-size: 12px;
     }
 
+section div.aboutventas_img img {
+    width: 552px;
+    height: 308px;
+    padding-top: 75px;
+    float: left;
+    padding-right: 0px;
+
+}
 
 
     #sub0 {
@@ -1105,6 +1115,15 @@ ul#contact_box {
             font-size: 12px;
             padding-bottom: 10px;
             line-height: 20px;
+        }
+
+        section div.aboutventas_img img {
+        width: 552px;
+        height: 308px;
+        padding-top: 75px;
+        float: left;
+        padding-right: 0px;
+
         }
         #main_subtext2 {
             text-align: center;
