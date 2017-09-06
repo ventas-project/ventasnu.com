@@ -288,7 +288,9 @@
             #menu li a:hover {
                 color: #62b1e3;
             }
-        </style>
+</style>
+
+
         <!-- 상단 -->
         <header>
             <div id="header">
@@ -512,7 +514,57 @@
 
         </div>
 
+		<script type="text/javascript">
+			var didScroll;
+			var lastScrollTop = 0;
+			var delta = 5;
+			var navbarHeight = $('#sub1').outerHeight();
+			//alert(navbarHeight);
+			navbarHeight = navbarHeight-80;
+			
+			$(window).scroll(function(event){
+				didScroll = true;
+			});
 
+			setInterval(function() {
+				if (didScroll) {
+					hasScrolled();
+					didScroll = false;
+				}
+			}, 600);
+
+			function hasScrolled() {
+			var st = $(this).scrollTop();
+				
+			// Make sure they scroll more than delta
+			if(Math.abs(lastScrollTop - st) <= delta)
+				return;
+			
+			//alert(st + " == " + lastScrollTop + " == " + navbarHeight );
+			// If they scrolled down and are past the navbar, add class .nav-up.
+			// This is necessary so you never see what is "behind" the navbar.
+			//alert(navbarHeight);
+			if (st > 0 && st > navbarHeight){
+				// Scroll Down
+				//$("#logoimg").attr("src",$("#logoimg").attr("src").replace("_on.png","_off.png")); 
+
+				$('header').css("background-color","#ffffff");
+				$('#menu li a').removeClass("onat");
+				$('#menu li a').addClass("offat");
+			} else {
+				// Scroll Up
+				//if(st + $(window).height() < $(document).height()) {
+				//	$("#logoimg").attr("src",$("#logoimg").attr("src").replace("_off.png","_on.png")); 
+					$('header').css("background-color","");
+					$('#menu li a').removeClass("offat");
+					$('#menu li a').addClass("onat");
+
+				//}
+			}
+			
+			lastScrollTop = st;
+		}
+	</script>
 
 
 </body>
