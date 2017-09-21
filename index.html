@@ -93,14 +93,7 @@
 
 <body>
 
-	<nav class="mobile_depth1">
-		<ul class="depth1">
-			<li><a href="javascript:scrollLink1('sub1');" class="point"><span class='menu_txt'>ABOUT</span></a></li>
-			<li><a href="javascript:scrollLink1('sub2');" class="point"><span class='menu_txt'>NECESSITY NEED</span></a></li>
-			<li><a href="javascript:scrollLink1('sub3');" class="point"><span class='menu_txt'>FEATURES</span></a></li>
-			<li><a href="javascript:scrollLink1('sub6');" class="point"><span class='menu_txt'>DOWNLOADS</span></a></li>
-		</ul>
-	</nav>
+
 
 	<script type="text/javascript">
 	var toggleOn=true;
@@ -204,21 +197,15 @@
 
 	<script type="text/javascript">
 	function scrollLink1(obj){
-		if ( !toggleOn ){
-				$("nav.mobile_depth1").css({"display":"block","width":"180px"});
-				$("nav.mobile_depth1").animate({"margin-right":"0"});
-				$("#wrapper").animate({"margin-right":"180"});
-				$("#wrapper").css({"position":"fixed", "top":"0px", "right":"0px"});
-				navSlideOn=true;
-				toggleOn=true;
-			}else{
-				$("nav.mobile_depth1").css({"display":"none","width":"180px"});
-				$("nav.mobile_depth1").css({"margin-right":"-180px"});
-				$("#wrapper").css({"margin-right":"0"});
-				$("#wrapper").css({"position":"relative"});
-				navSlideOn=false;
-				toggleOn=false;
-			}
+		// if ( !toggleOn ){
+		// 		$("#wrapper").css({"position":"fixed", "top":"0px", "right":"0px"});
+		// 		navSlideOn=true;
+		// 		toggleOn=true;
+		// 	}else{
+		// 		$("#wrapper").css({"position":"relative"});
+		// 		navSlideOn=false;
+		// 		toggleOn=false;
+		// 	}
 		 var position = $("#"+obj).offset();
 		$('html, body').animate({scrollTop : position.top}, 1000);
 
@@ -303,15 +290,7 @@
 
         <!-- 상단 -->
         <header>
-            <div id="header">
-                <div class="btn_nav"><img alt="메뉴보기" src="img/box.png"></div>
-                <ul id="menu">
-                    <li><a class="active onat" href="javascript:scrollLink('sub1');">ABOUT</a></li>
-                    <li><a class="active onat" href="javascript:scrollLink('sub2');">NECESSITY NEED</a></li>
-                    <li><a class="active onat" href="javascript:scrollLink('sub3');">FEATURES</a></li>
-                    <li><a class="active onat" href="javascript:scrollLink('sub6');">DOWNLOADS</a></li>
-                </ul>
-            </div>
+
         </header>
 
 
@@ -323,7 +302,7 @@
                 </div>
                 <div class="button">
                     <ul class="button_link">
-                        <li class="button1"><img src="img/button1.png"></a>
+                        <li class="button1"><a href="javascript:scrollLink1('sub6');" class="point"><img src="img/button1.png"></a>
                         </li>
                         <li class="button1"><a href="http://insight.ventasnu.com" target="_blank"><img src="img/button2.png"></a>
                         </li>
@@ -537,57 +516,7 @@
 
         </div>
 
-		<script type="text/javascript">
-			var didScroll;
-			var lastScrollTop = 0;
-			var delta = 5;
-			var navbarHeight = $('#sub1').outerHeight();
-			//alert(navbarHeight);
-			navbarHeight = navbarHeight-80;
-			
-			$(window).scroll(function(event){
-				didScroll = true;
-			});
 
-			setInterval(function() {
-				if (didScroll) {
-					hasScrolled();
-					didScroll = false;
-				}
-			}, 600);
-
-			function hasScrolled() {
-			var st = $(this).scrollTop();
-				
-			// Make sure they scroll more than delta
-			if(Math.abs(lastScrollTop - st) <= delta)
-				return;
-			
-			//alert(st + " == " + lastScrollTop + " == " + navbarHeight );
-			// If they scrolled down and are past the navbar, add class .nav-up.
-			// This is necessary so you never see what is "behind" the navbar.
-			//alert(navbarHeight);
-			if (st > 0 && st > navbarHeight){
-				// Scroll Down
-				//$("#logoimg").attr("src",$("#logoimg").attr("src").replace("_on.png","_off.png")); 
-
-				$('header').css("background-color","#ffffff");
-				$('#menu li a').removeClass("onat");
-				$('#menu li a').addClass("offat");
-			} else {
-				// Scroll Up
-				//if(st + $(window).height() < $(document).height()) {
-				//	$("#logoimg").attr("src",$("#logoimg").attr("src").replace("_off.png","_on.png")); 
-					$('header').css("background-color","");
-					$('#menu li a').removeClass("offat");
-					$('#menu li a').addClass("onat");
-
-				//}
-			}
-			
-			lastScrollTop = st;
-		}
-	</script>
 
 
 </body>
