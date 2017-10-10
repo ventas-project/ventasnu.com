@@ -10,82 +10,83 @@
     <script type='text/javascript' src='../js/jquery.bpopup.min.js'></script>
 
     <style>
-    #sub6 {
-        width: 100%;
-        height: 400px;
-        margin: auto;
-        border: 0px solid red;
-        background-image: url('img/download_bg.png');
-    }
-    
-    #sub0 {
-        width: 100%;
-        height: 750px;
-        no-repeat;
-        background-position: center;
-        background-size: cover;
-        background-image: url('img/main.png');
-    }
-    
-    @media screen and (max-width: 55.1875em) {
         #sub6 {
             width: 100%;
-            height: 480px;
+            height: 400px;
             margin: auto;
             border: 0px solid red;
-            background-image: url('img/download_bg.png')
+            background-image: url('img/download_bg.png');
         }
-        #sub6_bg {
-            width: 100%;
-            height: 580px;
-            position: relative;
-            margin: auto;
-            border: 0px solid red;
-        }
-        ul#process1 li {
-            width: 33%;
-            height: 160px;
-            text-align: center;
-        }
+        
         #sub0 {
             width: 100%;
-            height: 500px;
+            height: 750px;
             no-repeat;
             background-position: center;
             background-size: cover;
-            background-image: url('img/main.png')
+            background-image: url('img/main.png');
         }
-    }
-    @media screen and (max-width: 460px) {
+        
+        @media screen and (max-width: 55.1875em) {
             #sub6 {
-            width: 100%;
-            height: 650px;
-            margin: auto;
-            border: 0px solid red;
-            background-image: url('img/download_bg.png')
-        }
-        #sub6_bg {
-            width: 100%;
-            height: 580px;
-            position: relative;
-            margin: auto;
-            border: 0px solid red;
-        }
-        ul#process1 li {
-            width: 50%;
-            height: 160px;
-            text-align: center;
-        }
+                width: 100%;
+                height: 480px;
+                margin: auto;
+                border: 0px solid red;
+                background-image: url('img/download_bg.png')
+            }
+            #sub6_bg {
+                width: 100%;
+                height: 580px;
+                position: relative;
+                margin: auto;
+                border: 0px solid red;
+            }
+            ul#process1 li {
+                width: 33%;
+                height: 160px;
+                text-align: center;
+            }
             #sub0 {
-        width: 100%;
-        height: 550px;
-        no-repeat;
-        background-position: center;
-        background-size: cover;
-        background-image: url('img/main.png');
-    }
-    }
-</style>
+                width: 100%;
+                height: 500px;
+                no-repeat;
+                background-position: center;
+                background-size: cover;
+                background-image: url('img/main.png')
+            }
+        }
+        
+        @media screen and (max-width: 460px) {
+            #sub6 {
+                width: 100%;
+                height: 650px;
+                margin: auto;
+                border: 0px solid red;
+                background-image: url('img/download_bg.png')
+            }
+            #sub6_bg {
+                width: 100%;
+                height: 580px;
+                position: relative;
+                margin: auto;
+                border: 0px solid red;
+            }
+            ul#process1 li {
+                width: 50%;
+                height: 160px;
+                text-align: center;
+            }
+            #sub0 {
+                width: 100%;
+                height: 550px;
+                no-repeat;
+                background-position: center;
+                background-size: cover;
+                background-image: url('img/main.png');
+            }
+        }
+    </style>
 
 </head>
 
@@ -95,181 +96,202 @@
 
 
 
-	<script type="text/javascript">
-	var toggleOn=true;
-	var navSlideOn=true;
-	var shopSort=1;
-	var lnbIdx=-1;
+    <script type="text/javascript">
+        var toggleOn = true;
+        var navSlideOn = true;
+        var shopSort = 1;
+        var lnbIdx = -1;
 
-	toggleOn = false;
-	navSlideOn=false;
-	$(function(){
-			// 모바일사이즈일때 네비게이션 보이기
-			$(".btn_nav").click(function(){
-			if ( !toggleOn ){
-				$("nav.mobile_depth1").css({"display":"block","width":"180px"});
-				$("nav.mobile_depth1").animate({"margin-right":"0"});
-				$("#wrapper").animate({"margin-right":"180"});
-				$("#wrapper").css({"position":"fixed", "top":"0px", "right":"0px"});
-				navSlideOn=true;
-				toggleOn=true;
-			}else{
-				$("nav.mobile_depth1").css({"display":"none","width":"180px"});
-				$("nav.mobile_depth1").css({"margin-right":"-180px"});
-				$("#wrapper").css({"margin-right":"0"});
-				$("#wrapper").css({"position":"relative"});
-				navSlideOn=false;
-				toggleOn=false;
-			}
-
-
-
-
-		});
-
-		//모바일네비게이션
-
-	var isOpen = false;
-	var thisText = '';
-	var isOpen2 = false;
-	var thisText2 = '';
-	$("nav.mobile_depth1 ul.depth1 a").click(function(){    
-		var depth2 = $(this).parent().find(".depth2");
-		if($(depth2).length == 0) return;  
-		if(thisText != $(this).text()) isOpen = false; 
-		if(!isOpen){ 
-			$("nav.mobile_depth1 ul.depth1").find(".depth2").hide();
-			$("nav.mobile_depth1 ul.depth2").find(".depth3").hide();
-			$("nav.mobile_depth1 ul.depth1 a").removeClass("cnt");  
-			$(depth2).show();
-			$(this).addClass("cnt");  
-			isOpen = true;
-			thisText = $(this).text();
-		}
-		else{
-			var depth2 = $(this).parent().find(".depth2");
-			$(depth2).hide();
-			$(this).removeClass("cnt");
-			isOpen = false;
-		}
-		
-	});
+        toggleOn = false;
+        navSlideOn = false;
+        $(function() {
+            // 모바일사이즈일때 네비게이션 보이기
+            $(".btn_nav").click(function() {
+                if (!toggleOn) {
+                    $("nav.mobile_depth1").css({
+                        "display": "block",
+                        "width": "180px"
+                    });
+                    $("nav.mobile_depth1").animate({
+                        "margin-right": "0"
+                    });
+                    $("#wrapper").animate({
+                        "margin-right": "180"
+                    });
+                    $("#wrapper").css({
+                        "position": "fixed",
+                        "top": "0px",
+                        "right": "0px"
+                    });
+                    navSlideOn = true;
+                    toggleOn = true;
+                } else {
+                    $("nav.mobile_depth1").css({
+                        "display": "none",
+                        "width": "180px"
+                    });
+                    $("nav.mobile_depth1").css({
+                        "margin-right": "-180px"
+                    });
+                    $("#wrapper").css({
+                        "margin-right": "0"
+                    });
+                    $("#wrapper").css({
+                        "position": "relative"
+                    });
+                    navSlideOn = false;
+                    toggleOn = false;
+                }
 
 
-	$("nav.mobile_depth1 ul.depth2 a").click(function(){   
-		if(thisText2 != $(this).text()) isOpen2 = false;
-		if(!isOpen2){
-			$("nav.mobile_depth1 ul.depth2").find(".depth3").hide();
-			$("nav.mobile_depth1 ul.depth2 a").removeClass("cnt");  
-			var depth3 = $(this).parent().find(".depth3");
-			$(depth3).show();
-			$(this).addClass("cnt");
-			isOpen2 = true;
-			thisText2 = $(this).text();
-		}
-		else{
-			var depth3 = $(this).parent().find(".depth3");
-			$(depth3).hide();
-			$(this).removeClass("cnt");
-			isOpen2 = false;
-		} 
-	});
-		
-		  $('#sub0').vide({
-			  'mp4': '/img/web_video.mp4',
-			  'poster': '../img/web_video_img.png'
-		  }, {
-			// Options
-			muted: true,
-			loop: true,
-			overlay: true,
-		  });
-		
-
-	});
-
-				var timer = setInterval(function () {
-				$("#lording").hide();
-				clearInterval(timer);
-				}, 1000);
-</script>
-	<script src="/js/vidbg.js"></script>
-
-	<script type="text/javascript">
-	function scrollLink1(obj){
-		// if ( !toggleOn ){
-		// 		$("#wrapper").css({"position":"fixed", "top":"0px", "right":"0px"});
-		// 		navSlideOn=true;
-		// 		toggleOn=true;
-		// 	}else{
-		// 		$("#wrapper").css({"position":"relative"});
-		// 		navSlideOn=false;
-		// 		toggleOn=false;
-		// 	}
-		 var position = $("#"+obj).offset();
-		$('html, body').animate({scrollTop : position.top}, 1000);
-
-	}
-
-	function scrollLink(obj){
-		 var position = $("#"+obj).offset();
-		$('html, body').animate({scrollTop : position.top -200}, 1000);
-
-	}
-	function linkan(val){
-		location.href="index.html?"+val;
-	}
-	</script>
 
 
-		<script type="text/javascript">
-	//레이어 팝업
-	function pop_gogo1(){
-	   $('#element_to_pop_up1').bPopup();	
-	}
-	//레이어 팝업
-	function pop_gogo2(){
-	   $('#element_to_pop_up2').bPopup();	
-	}
+            });
 
-	//레이어 팝업
-	function pop_gogo3(){
-	   $('#element_to_pop_up3').bPopup();	
-	}
+            //모바일네비게이션
 
-	//레이어 팝업
-	function pop_gogo4(){
-	   $('#element_to_pop_up4').bPopup();	
-	}
+            var isOpen = false;
+            var thisText = '';
+            var isOpen2 = false;
+            var thisText2 = '';
+            $("nav.mobile_depth1 ul.depth1 a").click(function() {
+                var depth2 = $(this).parent().find(".depth2");
+                if ($(depth2).length == 0) return;
+                if (thisText != $(this).text()) isOpen = false;
+                if (!isOpen) {
+                    $("nav.mobile_depth1 ul.depth1").find(".depth2").hide();
+                    $("nav.mobile_depth1 ul.depth2").find(".depth3").hide();
+                    $("nav.mobile_depth1 ul.depth1 a").removeClass("cnt");
+                    $(depth2).show();
+                    $(this).addClass("cnt");
+                    isOpen = true;
+                    thisText = $(this).text();
+                } else {
+                    var depth2 = $(this).parent().find(".depth2");
+                    $(depth2).hide();
+                    $(this).removeClass("cnt");
+                    isOpen = false;
+                }
 
-	//레이어 팝업
-	function pop_gogo5(){
-	   $('#element_to_pop_up5').bPopup();	
-	}
-
-
-//레이어 팝업
-	function pop_gogo6(){
-	   $('#element_to_pop_up6').bPopup();	
-	}
-
-	//레이어 팝업
-	function pop_gogo7(){
-	   $('#element_to_pop_up8').bPopup();	
-	}
-
-	//레이어 팝업
-	function pop_gogo8(){
-	   $('#element_to_pop_up9').bPopup();	
-	}
-
-	//레이어 팝업
-	function pop_gogo9(){
-	   $('#element_to_pop_up10').bPopup();	
-	}
+            });
 
 
-</script>
+            $("nav.mobile_depth1 ul.depth2 a").click(function() {
+                if (thisText2 != $(this).text()) isOpen2 = false;
+                if (!isOpen2) {
+                    $("nav.mobile_depth1 ul.depth2").find(".depth3").hide();
+                    $("nav.mobile_depth1 ul.depth2 a").removeClass("cnt");
+                    var depth3 = $(this).parent().find(".depth3");
+                    $(depth3).show();
+                    $(this).addClass("cnt");
+                    isOpen2 = true;
+                    thisText2 = $(this).text();
+                } else {
+                    var depth3 = $(this).parent().find(".depth3");
+                    $(depth3).hide();
+                    $(this).removeClass("cnt");
+                    isOpen2 = false;
+                }
+            });
+
+            $('#sub0').vide({
+                'mp4': '/img/web_video.mp4',
+                'poster': '../img/web_video_img.png'
+            }, {
+                // Options
+                muted: true,
+                loop: true,
+                overlay: true,
+            });
+
+
+        });
+
+        var timer = setInterval(function() {
+            $("#lording").hide();
+            clearInterval(timer);
+        }, 1000);
+    </script>
+    <script src="/js/vidbg.js"></script>
+
+    <script type="text/javascript">
+        function scrollLink1(obj) {
+            // if ( !toggleOn ){
+            // 		$("#wrapper").css({"position":"fixed", "top":"0px", "right":"0px"});
+            // 		navSlideOn=true;
+            // 		toggleOn=true;
+            // 	}else{
+            // 		$("#wrapper").css({"position":"relative"});
+            // 		navSlideOn=false;
+            // 		toggleOn=false;
+            // 	}
+            var position = $("#" + obj).offset();
+            $('html, body').animate({
+                scrollTop: position.top
+            }, 1000);
+
+        }
+
+        function scrollLink(obj) {
+            var position = $("#" + obj).offset();
+            $('html, body').animate({
+                scrollTop: position.top - 200
+            }, 1000);
+
+        }
+
+        function linkan(val) {
+            location.href = "index.html?" + val;
+        }
+    </script>
+
+
+    <script type="text/javascript">
+        //레이어 팝업
+        function pop_gogo1() {
+            $('#element_to_pop_up1').bPopup();
+        }
+        //레이어 팝업
+        function pop_gogo2() {
+            $('#element_to_pop_up2').bPopup();
+        }
+
+        //레이어 팝업
+        function pop_gogo3() {
+            $('#element_to_pop_up3').bPopup();
+        }
+
+        //레이어 팝업
+        function pop_gogo4() {
+            $('#element_to_pop_up4').bPopup();
+        }
+
+        //레이어 팝업
+        function pop_gogo5() {
+            $('#element_to_pop_up5').bPopup();
+        }
+
+
+        //레이어 팝업
+        function pop_gogo6() {
+            $('#element_to_pop_up6').bPopup();
+        }
+
+        //레이어 팝업
+        function pop_gogo7() {
+            $('#element_to_pop_up8').bPopup();
+        }
+
+        //레이어 팝업
+        function pop_gogo8() {
+            $('#element_to_pop_up9').bPopup();
+        }
+
+        //레이어 팝업
+        function pop_gogo9() {
+            $('#element_to_pop_up10').bPopup();
+        }
+    </script>
 
     <div id="wrapper">
 
@@ -285,7 +307,7 @@
             #menu li a:hover {
                 color: #62b1e3;
             }
-</style>
+        </style>
 
 
         <!-- 상단 -->
@@ -302,9 +324,11 @@
                 </div>
                 <div class="button">
                     <ul class="button_link">
-                        <li class="button1"><a href="javascript:scrollLink1('sub6');" class="point"><img src="img/button1.png"></a>
+                        <li class="button1">
+                            <a href="javascript:scrollLink1('sub6');" class="point"><img src="img/button1.png"></a>
                         </li>
-                        <li class="button1"><a href="http://insight.ventasnu.com" target="_blank"><img src="img/button2.png"></a>
+                        <li class="button1">
+                            <a href="http://insight.ventasnu.com" target="_blank"><img src="img/button2.png"></a>
                         </li>
                     </ul>
                 </div>
@@ -317,13 +341,13 @@
                             <div class="aboutventas_img"><img src="img/about_img.png"></div>
                             <div class="aboutventas_img2"><img src="img/about_logo.png"></div>
                             <div class="about_textbox">
-                            <p class="aboutventas_text1">
-                                WHAT IS VENTAS COIN ?
-                            </p>
-                            <p class="aboutventas_text2">
-                                VENTAS Coin is an open source, peer-to-peer, community driven decentralized cryptocurrency that allow people to store and invest their wealth in a non-government controlled currency, and even earn a substantial interest on investment. This means anyone
-                                holding BitConnect Coin in their wallet will receive interest on their balance in return for helping maintain security of the network.
-                            </p>
+                                <p class="aboutventas_text1">
+                                    WHAT IS VENTAS COIN ?
+                                </p>
+                                <p class="aboutventas_text2">
+                                    VENTAS Coin is an open source, peer-to-peer, community driven decentralized cryptocurrency that allow people to store and invest their wealth in a non-government controlled currency, and even earn a substantial interest on investment. This means anyone
+                                    holding BitConnect Coin in their wallet will receive interest on their balance in return for helping maintain security of the network.
+                                </p>
                             </div>
                         </div>
                     </section>
@@ -409,8 +433,9 @@
                             <li>
                                 <div class='process_back'>
                                     <div class='process_img1'>
-            
-                                        <a href="https://github.com/ventas-project/ventas/releases/download/0.14.1/ventas-0.14.1-win64-setup.exe" target="_blank"><img src="img/down_icon1.png"><a>
+
+                                        <a href="https://github.com/ventas-project/ventas/releases/download/0.14.1.1/ventas-0.14.1.1-win64-setup.exe" target="_blank"><img src="img/down_icon1.png">
+                                            <a>
                                     </div>
                                     <div class="process_text1">
                                         Windows
@@ -420,7 +445,7 @@
                             <li>
                                 <div class='process_back'>
                                     <div class='process_img1'>
-                                        <a href="https://github.com/ventas-project/ventas/releases/download/0.14.1/Ventas-Qt.dmg" target="_blank"><img src="img/down_icon2.png"></a>
+                                        <a href="https://github.com/ventas-project/ventas/releases/download/0.14.1.1/Ventas-Qt.dmg" target="_blank"><img src="img/down_icon2.png"></a>
                                     </div>
                                     <div class="process_text1">
                                         Mac OS X
@@ -431,7 +456,7 @@
                                     <div class='process_img1'>
                                         <a href="https://github.com/ventas-project/ventasnu.com" target="_blank"><img src="img/down_icon3.png"></a>
                                     </div>
-                                     
+
                                     <div class="process_text1">
                                         Linux
                                     </div>
@@ -440,12 +465,12 @@
                             <li>
                                 <div class='process_back'>
                                     <div class='process_img1'>
-                                        <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">
-                                        <img src="img/down_icon4.png">
+                                        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">
+                                            <img src="img/down_icon4.png">
                                         </a>
                                     </div>
-                                    <div id="light" class="white_content">준비중입니다. <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">닫기</a></div>
-        <div id="fade" class="black_overlay"></div>
+                                    <div id="light" class="white_content">준비중입니다. <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">닫기</a></div>
+                                    <div id="fade" class="black_overlay"></div>
                                     <div class="process_text1">
                                         Android
                                     </div>
@@ -453,12 +478,12 @@
                             <li>
                                 <div class='process_back'>
                                     <div class='process_img1'>
-                                         <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">
-                                        <img src="img/down_icon2.png">
+                                        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">
+                                            <img src="img/down_icon2.png">
                                         </a>
                                     </div>
-                                    <div id="light" class="white_content">준비중입니다. <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">닫기</a></div>
-        <div id="fade" class="black_overlay"></div>
+                                    <div id="light" class="white_content">준비중입니다. <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">닫기</a></div>
+                                    <div id="fade" class="black_overlay"></div>
                                     <div class="process_text1">
                                         IOS
                                     </div>
