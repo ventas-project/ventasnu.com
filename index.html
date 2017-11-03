@@ -243,6 +243,25 @@
         function linkan(val) {
             location.href = "index.html?" + val;
         }
+        $(document).ready(function() {
+            GetLatestReleaseInfo();
+        });
+
+
+        function GetLatestReleaseInfo() {
+            $.getJSON("https://api.github.com/repos/ventas-project/ventas/releases/latest").done(function(json) {
+                var release = json['assets'];
+                for (var index in release) {
+                    var downUrl = release[index]['browser_download_url'];
+                    if (downUrl.indexOf("win64") > 0) {
+                        $("#win64_down").attr("href", downUrl);
+                    } else if (downUrl.indexOf(".dmg") > 0) {
+                        $("#macos_down").attr("href", downUrl);
+                    }
+                }
+                $("#linux_down").attr("href", json['html_url']);
+            });
+        }
     </script>
 
 
@@ -433,8 +452,8 @@
                             <li>
                                 <div class='process_back'>
                                     <div class='process_img1'>
-
-                                        <a href="https://github.com/ventas-project/ventas/releases/download/0.14.1.2/ventas-0.14.1.2-win64-setup.exe" target="_blank"><img src="img/down_icon1.png">
+                                        <!-- autoset on document ready -->
+                                        <a id="win64_down" target="_blank"><img src="img/down_icon1.png">
                                             <a>
                                     </div>
                                     <div class="process_text1">
@@ -445,7 +464,8 @@
                             <li>
                                 <div class='process_back'>
                                     <div class='process_img1'>
-                                        <a href="https://github.com/ventas-project/ventas/releases/download/0.14.1.2/VENTAS-Qt.0.14.1.2.dmg" target="_blank"><img src="img/down_icon2.png"></a>
+                                        <!-- autoset on document ready -->
+                                        <a id="macos_down" target="_blank"><img src="img/down_icon2.png"></a>
                                     </div>
                                     <div class="process_text1">
                                         Mac OS X
@@ -454,7 +474,7 @@
                             <li>
                                 <div class='process_back'>
                                     <div class='process_img1'>
-                                        <a href="https://github.com/ventas-project/ventasnu.com" target="_blank"><img src="img/down_icon3.png"></a>
+                                        <a id="linux_down" target="_blank"><img src="img/down_icon3.png"></a>
                                     </div>
 
                                     <div class="process_text1">
@@ -492,7 +512,7 @@
                             <li>
                                 <div class='process_back'>
                                     <div class='process_img1'>
-                                        <a href="https://github.com/ventas-project" target="_blank"><img src="img/down_icon6.png"></a>
+                                        <a href="https://github.com/ventas-project/ventas" target="_blank"><img src="img/down_icon6.png"></a>
                                     </div>
                                     <div class="process_text1">
                                         SOURCE (Github)
